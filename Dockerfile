@@ -34,7 +34,7 @@ RUN composer install --no-interaction --optimize-autoloader --no-dev
 # Permissão do arquivo .sh
 RUN chmod +x /var/www/run-ws.sh
 
-EXPOSE 30712
+EXPOSE 80
 
 # Executando run.sh
-CMD [ "/var/www/run-ws.sh" ]
+CMD [ "/var/www/run.sh" ]
