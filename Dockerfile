@@ -27,7 +27,7 @@ RUN pecl install mongodb \
     &&  echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongo.ini
 
 # Get latest Composer
-COPY --from=image-registry.openshift-image-registry.svc:5000/openshift/composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
